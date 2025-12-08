@@ -83,6 +83,8 @@ RegisterNumber:25017523
 <img width="1041" height="496" alt="Screenshot 2025-12-08 201235" src="https://github.com/user-attachments/assets/924a96a1-9f31-4031-bbf4-d0244ba04ba7" />
 
 
+
+
 **RESULTS**
 
 Thus To implement T flipflop using verilog and validating their functionality using their functional tables is successful
