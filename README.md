@@ -72,7 +72,7 @@ RegisterNumber:25017523
 
 **RTL LOGIC FOR FLIPFLOPS**
 
-<img width="1031" height="528" alt="image" src="https://github.com/user-attachments/assets/36293eda-66d0-4d53-8fb0-5887c14dcafc" />
+<img width="929" height="467" alt="Screenshot 2025-12-09 114054" src="https://github.com/user-attachments/assets/98888e45-ef53-428e-a369-bb8935c782de" />
 
 
 
