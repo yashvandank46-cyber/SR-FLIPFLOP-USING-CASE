@@ -45,24 +45,21 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 5.For different input combinations generate the timing diagram.
 
 ```
-module Gate_8 (
-    input  wire clk, rst, T,
-    output reg Q 	  
+module Gate_11 (
+    input  wire clk, rst, S, R,
+    output reg  Q
 );
-
-  initial begin
-     Q<=1'b0;
-	 end
-  
-  
-	 always @(posedge clk or posedge rst) begin
-	
+    always @(posedge clk) begin
         if (rst)
-            Q <= 1'b0;       // Reset
-        else if (T)
-            Q <= ~Q;         // Toggle if T=1
-        else
-            Q <= Q;          // Hold if T=0
+            Q <= 1'b0;         // Reset
+        else begin
+            case ({S,R})
+                2'b00: Q <= Q;     // No change
+                2'b01: Q <= 1'b0;  // Reset
+                2'b10: Q <= 1'b1;  // Set
+                2'b11: Q <= 1'bx;  // Invalid
+            endcase
+        end
     end
 endmodule
 ```
@@ -75,16 +72,18 @@ RegisterNumber:25017523
 
 **RTL LOGIC FOR FLIPFLOPS**
 
-<img width="960" height="804" alt="Screenshot 2025-12-08 201212" src="https://github.com/user-attachments/assets/0fa3b55b-b64d-416d-9d32-94e75d76de9c" />
+<img width="1031" height="528" alt="image" src="https://github.com/user-attachments/assets/36293eda-66d0-4d53-8fb0-5887c14dcafc" />
+
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
-<img width="1041" height="496" alt="Screenshot 2025-12-08 201235" src="https://github.com/user-attachments/assets/924a96a1-9f31-4031-bbf4-d0244ba04ba7" />
+<img width="1032" height="240" alt="image" src="https://github.com/user-attachments/assets/106aef70-6e4f-46df-ad6c-6f85d405415c" />
+
 
 
 
 
 **RESULTS**
 
-Thus To implement T flipflop using verilog and validating their functionality using their functional tables is successful
+Thus To implement SR flipflop using verilog and validating their functionality using their functional tables is successful
